@@ -1,0 +1,26 @@
+<div class="container">
+
+  <h1>Minhas tarefas</h1>
+
+  <app-nova-tarefa
+    (tarefaAdicionada)="adicionarTarefa($event)">
+  </app-nova-tarefa>
+
+  <div class="lista">
+
+    @for (tarefa of tarefas(); track $index) {
+
+      <app-tarefa-item
+        [texto]="tarefa.texto"
+        [concluida]="tarefa.concluida"
+        (excluir)="excluirTarefa($index)"
+        (concluir)="concluirTarefa($index)">
+      </app-tarefa-item>
+
+    }
+
+  </div>
+
+  <p>Total de tarefas: {{ tarefas().length }}</p>
+
+</div>

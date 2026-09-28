@@ -1,0 +1,13 @@
+<div class="tarefa" [class.concluida]="concluida()">
+
+  <input
+    type="checkbox"
+    [checked]="concluida()"
+    (change)="concluirTarefa()"
+  />
+
+  <span>{{ texto() }}</span>
+
+  <button (click)="excluirTarefa()">Excluir</button>
+
+</div>
